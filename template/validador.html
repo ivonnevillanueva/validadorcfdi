@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link href="{{ STATIC_ROOT }}css/validador.css" rel="stylesheet" type="text/css">
+	<script src="{{ STATIC_ROOT }}js/jquery-1.10.2.js"></script>
+	<script src="{{ STATIC_ROOT }}js/jquery-ui-1.10.4.custom.js"></script>
+	<script>
+	$(function() {
+		
+		$( "#accordion" ).accordion();
+		var availableTags = [
+			"ActionScript",
+			"AppleScript",
+			"JavaScript",
+			
+		];
+		$( "#autocomplete" ).autocomplete({
+			source: availableTags
+		});
+		$( "#tabs" ).tabs();
+		//$(".selector" ).tabs({ active: 1 });
+    //verifi
+	});
+	</script>
+	
+	<style>
+	body{
+		font: 62.5% "Trebuchet MS", sans-serif;
+		margin: 50px;
+	}
+	</style>
+</head>
+<body>
+
+<!-- Tabs -->
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">Validador</a></li>
+		<li><a href="#tabs-2">Cadena Original</a></li>
+		<li><a href="#tabs-3">Sello Digital</a></li>
+    <!--<li><a href="#tabs-4">Cadena y Sello </a></li>-->
+	</ul>
+	<div id="tabs-1"><table width="auto" height="auto" border="0" table="table" rules="groups" align="center">
+        <tr>
+          <td width="200" height="69">&nbsp;</td>
+          <td width="575"><p align="center"><font color="#525252"><font size="-1">Valida tus XML, FINKOK le dira si su XML tiene errorres y le mostrara un reporte en la parte inferior,<br />
+            si esta todo correcto le aparecera un mensaje que su documento XML esta correcto. </font></p>
+            <form>
+              &nbsp;
+              &nbsp;
+              <p align="center"> Comprobante: <input type="file" name="KEY:" />
+                doajiasdjiadiia
+              </p>
+            </form>
+            <form>
+              <p align="center"> Certificado PAC:<input type="file" name="KEY:" />
+              </p>
+              <p align="center">
+                <input type="button" value="Validar"/>
+              </p>
+            </form></td>
+          <td width="173">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><font color="#119b0e">
+            <table width="auto" border="0" bordercolor="ececec" align="center" table="table" rules="all" bgcolor="dbdbdb">
+              <tr>
+                <td><div align="center" ></td>
+              </tr>
+              <tr>
+                <td height="48" colspan="2"><div align="center"><font size="+2">REPORTE DE VALIDACION</div></td>
+              </tr>
+              <tr>
+                <td width="140"> Versión:</td>
+                <td width="228">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Fecha:</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Sello:</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Forma de pago:</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>NoCertificado</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Certificado:</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Subtotal:</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Total:</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Tipo de Comprobante:</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Metodo de pago:</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Lugar de Expedicion:</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>RFC emisor:</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Regimen:</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>RFC Receptor:</td>
+                <td>&nbsp;</td>
+              </tr>
+               <tr>
+                <td></td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+            <p align="center">
+              <input type="button" value="Imprimir" />
+            </p>
+            <p>&nbsp;</p></td>
+          <td>&nbsp;</td>
+        </tr>
+      </table></div>
+	<div id="tabs-2"><table align="center" width="600" height="416" border="2" bordercolor=silver>
+          <tr>
+            <td>
+             <p align="center"> XML: <input type="file" name="XMLL:" />
+                
+                <p align="center"><input type="button" value="Generar"/>
+                  
+                <br />
+              <br />
+
+              <input type="text"
+cols="40" rows="5" style="width:300px; height:150px;" 
+name="Text1" id="Text1" value="">     </p>
+            </td> 
+          </tr>
+        </table></div>
+	<div id="tabs-3">
+        <table width="auto" height="auto" border="1" bordercolor=silver>
+          <tr>
+
+            <td width="610">
+            <br>
+            <br><br>
+            <br>
+             <p align="center"> Cadena:
+                <input type="text" cols="20" rows="2" style="width:500px; height:50px;" 
+name="Text1" id="Text1" value="">
+             <p align="center"> KEY: <input type="file" name="KEY:" />
+
+             <p align="center"> PASS: <input type="text" name="PASS:" />
+               
+              <p align="center"><input type="button" value="Crear"/>
+                
+                <br />
+              <br />
+            <input type="text" cols="40" rows="5" style="width:300px; height:150px;" 
+name="Text1" id="Text1" value=""> </p>
+            </td>
+            <td width="600"> 
+              <p align="center">Sello:</p>
+              <p align="center"><input type="text" cols="40" rows="5" style="width:500px; height:130px;" 
+name="Text1" id="Text1" value=""> </p>
+&nbsp;
+ <p align="center"> CER: <input type="file" name="cer:" /></p>
+&nbsp;
+<p align="center"><input type="button" value="Validar"/>
+<table align="center" >
+ &nbsp;
+  <td>Respuesta: </td>
+</table>
+</td>
+</tr>
+  </table></div>
+<!--<div id="tabs-4">
+              <table border=1  bordercolor=silver>
+                &nbsp;
+                &nbsp;
+              <td>
+                 <p>XML: <input type="file" name="XML2" />
+                  <p>CER: <input type="file" name="cer2" />
+                  <p>KEY: <input type="file" name="KEY2" />
+                    <p> PASS: <input type="text" name="PASS:"/>
+
+                  <p align="center"> <input type="button" value="Validar"/><p/>
+                    Sello:
+                  <p align="center"><input type="text" cols="40" rows="5" style="width:500px; height:100px;">
+                    <p> Cadena:</p>
+                    <p align="center"><input type="text" cols="40" rows="5" style="width:500px; height:100px;">
+              </td>
+              </table>
+             </div>-->
+</div>
+</body>
+</html>
