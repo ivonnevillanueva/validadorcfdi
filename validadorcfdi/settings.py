@@ -1,5 +1,6 @@
 import os
 # Django settings for validadorcfdi project.
+# Proyecto validador de comprobantes
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
