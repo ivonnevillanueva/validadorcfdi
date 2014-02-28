@@ -57,7 +57,7 @@ MEDIA_ROOT = ''
 MEDIA_URL = ''
 
 STATIC_ROOT = os.path.join(PROJECT_DIR,'../static/')
-STATIC_URL = '/static/'
+STATIC_URL = '../static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -101,7 +101,7 @@ ROOT_URLCONF = 'validadorcfdi.urls'
 WSGI_APPLICATION = 'validadorcfdi.wsgi.application'
 
 TEMPLATE_DIRS = (
-  os.path.join(PROJECT_DIR,'../template')
+  os.path.join(PROJECT_DIR,'../template/')
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -128,7 +128,9 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    # 'django.contrib.admindocs'
+    'apps',
+    'cfdi',
 
 )
 
