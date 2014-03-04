@@ -2,26 +2,65 @@
 <html>
 <head>
   <title></title>
+  <script language="javascript"> 
+ function comprueba_extension(f, archivo) { 
+    extensiones_permitidas = new Array(".html"); 
+    mierror = ""; 
+    if (!archivo) { 
+        //Si no tengo archivo, es que no se ha seleccionado un archivo en el formulario 
+        mierror = "No has seleccionado ningún archivo"; 
+    }else{ 
+        //recupero la extensión de este nombre de archivo 
+        extension = (archivo.substring(archivo.lastIndexOf("."))).toLowerCase(); 
+        //alert (extension); 
+        //compruebo si la extensión está entre las permitidas 
+        permitida = false; 
+        for (var i = 0; i < extensiones_permitidas.length; i++) { 
+            if (extensiones_permitidas[i] == extension) { 
+                permitida = true; 
+                break; 
+            } 
+        } 
+        if (!permitida) { 
+            mierror = "Comprueba la extensión de los archivos a subir. \nSólo se pueden subir archivos con extensiones: " + extensiones_permitidas.join(); 
+        }else{ 
+            //submito! 
+            alert ("archivo correcto"); 
+            //return true; 
+        } 
+    } 
+    //si estoy aqui es que no se ha podido submitir 
+    alert (mierror); 
+    return false; 
+} 
+</script> 
 </head>
 <body>
-<h1> <p align="center"> Cadena Original</h1>
-<div id="tabs-1"><table align="center" width="600" height="416" border="2" bordercolor=silver>
 
+<div id="show"><table align="center" width="auto" height="auto" border="0" bordercolor=silver>
+<style type="text/css">
+  .estilotextarea {background-color: transparent;border: 1px solid #000000;scrollbar-arrow-color: #000066;scrollbar-base-color: #000033;scrollbar-dark-shadow-color: #336699;scrollbar-track-color: #666633;scrollbar-face-color: #cc9933;scrollbar-shadow-color: #DDDDDD;scrollbar-highlight-color: #CCCCCC;}
+</style>
           <tr>
             <td>
-             <p align="center"> XML: <input type="file" name="XMLL:" />
-                
-                <p align="center"><input type="button" value="Generar"/>
-                 
+               <p align="center"> XML: 
+<form action="" method="post" enctype="multipart/form-data" name="formulario" onsubmit="return comprueba_extension(document.formulario, document.getElementById('archivo').value)"> 
+Archivo: 
+<input name="archivo" type="file" id="archivo" size="150" maxlength="150"> 
+<br> 
+<br> <p align="center">
+<input type="submit" type="button" value="Generar"> 
                 <br />
               <br />
-
-              <textarea readonly type="text" cols="40" rows="5" style="width:300px; height:150px;" 
-              name="Text1" id="Text1" value="" ></textarea> 
+              <center><form name="select_all">
+        <textarea class="estilotextarea" readonly type="text" cols="60" rows="10" name="Text1" id="Text1" value="" >
+        CadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginal
+              </textarea> <br>
+              <input value="Seleccionar texto" onclick="javascript:this.form.Text1.focus();this.form.Text1.select();" type="button"/></form></center>
                 </p>
             </td> 
           </tr>
-</table>        </div>
+</table></div>
 
 </body>
 </html>

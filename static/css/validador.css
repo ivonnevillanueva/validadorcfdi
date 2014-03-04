@@ -1,7 +1,9 @@
 .ui-helper-hidden {
     display: none;
 }
-
+textarea {
+    resize: none;
+}
 .ui-helper-clearfix:before,
 .ui-helper-clearfix:after {
     content: "";
