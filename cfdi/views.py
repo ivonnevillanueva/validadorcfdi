@@ -10,7 +10,14 @@ from django.views.generic import TemplateView
 def validador(request):
     return  render(request,'validador.html', {'validador':validador})
 
+class validadorcfdi(TemplateView):
+	"""docstring for validadorcfdi"""
+	template_name = 'validadorcfdi.html'
+
 class cadena(TemplateView):
 	"""docstring for cadena"""
 	template_name = 'cadena.html'
-    
+
+class sellodigital(TemplateView):
+	"""docstring for sellodigital"""
+	template_name = 'sellodigital.html' 
