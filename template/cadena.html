@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+ 
   <script language="javascript"> 
  function comprueba_extension(f, archivo) { 
     extensiones_permitidas = new Array(".html"); 
@@ -23,10 +25,10 @@
         } 
         if (!permitida) { 
             mierror = "Comprueba la extensión de los archivos a subir. \nSólo se pueden subir archivos con extensiones: " + extensiones_permitidas.join(); 
-        }else{ 
+        //}else{ 
             //submito! 
-            alert ("archivo correcto"); 
-            //return true; 
+        //alert ("archivo correcto"); 
+          //return true; 
         } 
     } 
     //si estoy aqui es que no se ha podido submitir 
@@ -36,16 +38,18 @@
 </script> 
 </head>
 <body>
+<<<<<<< HEAD
   <br><br>
+=======
+ 
+<div id="show"><!--<table align="center" width="auto" height="auto" border="0" bordercolor=silver>-->
+>>>>>>> 2fab922e5a5f26ebb1fb3052b9806b49379c2f21
 
-<div id="show"><table align="center" width="auto" height="auto" border="0" bordercolor=silver>
-<style type="text/css">
-  .estilotextarea {background-color: transparent;border: 1px solid #000000;scrollbar-arrow-color: #000066;scrollbar-base-color: #000033;scrollbar-dark-shadow-color: #336699;scrollbar-track-color: #666633;scrollbar-face-color: #cc9933;scrollbar-shadow-color: #DDDDDD;scrollbar-highlight-color: #CCCCCC;}
-</style>
           <tr>
             <td>
                <p align="center"> XML: 
 <form action="" method="post" enctype="multipart/form-data" name="formulario" onsubmit="return comprueba_extension(document.formulario, document.getElementById('archivo').value)"> 
+<p align="center">
 Archivo: 
 <input name="archivo" type="file" id="archivo" size="150" maxlength="150"> 
 <br> 
@@ -54,14 +58,16 @@ Archivo:
                 <br />
               <br />
               <center><form name="select_all">
-        <textarea class="estilotextarea" readonly type="text" cols="60" rows="10" name="Text1" id="Text1" value="" >
-        CadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginalCadenaOriginal
-              </textarea> <br>
+              <textarea readonly id="pr1" cols="60" rows="20">
+              </textarea> 
+       <!-- <textarea class="estilotextarea" readonly type="text" cols="60" rows="10" name="Text1" id="Text1" value="" style="overflow">
+        
+              </textarea> --><br>
               <input value="Seleccionar texto" onclick="javascript:this.form.Text1.focus();this.form.Text1.select();" type="button"/></form></center>
                 </p>
             </td> 
           </tr>
-</table></div>
+<!--</table>--></div>
 
 </body>
 </html>

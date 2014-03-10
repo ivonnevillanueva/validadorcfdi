@@ -53,15 +53,17 @@ USE_TZ = True
 # Example: "/home/media/media.lawrence.com/media/"
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
-MEDIA_ROOT = ''
-MEDIA_URL = ''
+MEDIA_ROOT = os.path.join(PROJECT_DIR,'../template/')
+MEDIA_URL = '../template'
 
 STATIC_ROOT = os.path.join(PROJECT_DIR,'../static/')
 STATIC_URL = '../static/'
 
+
 # Additional locations of static files
 STATICFILES_DIRS = (
   os.path.join(PROJECT_DIR,'../static/'),
+
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -73,6 +75,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'dajaxice.finders.DajaxiceFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -82,7 +85,7 @@ SECRET_KEY = 'e-l$lj^8v8o%x+nw&amp;)3-ct&amp;21mm0yl*36=ma!2!_8g2abd3)1t'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -106,7 +109,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     #'/home/edgar/Documents/validadorcfdi/static/',
-#STATIC_ROOT + 'static/css/',
+#STATIC_ROOT + '../validadorcfdi/template/',
 #STATIC_ROOT + 'static/js/',
 )
 TEMPLATE_CONTEXT_PROCESSORS = (

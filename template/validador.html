@@ -20,10 +20,47 @@
 
   
 
+<<<<<<< HEAD
+=======
+	<meta charset="utf-8">
+	<title></title>
+	<link href="{{ STATIC_ROOT }}css/validador.css" rel="stylesheet" type="text/css">
+	<script src="{{ STATIC_ROOT }}js/jquery-1.10.2.js"></script>
+	<script src="{{ STATIC_ROOT }}js/jquery-ui-1.10.4.custom.js"></script>
+
+ <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+
+	<script>
+	$(function() {
+		
+		$( "#accordion" ).accordion();
+		var availableTags = [
+			"ActionScript",
+			"AppleScript",
+			"JavaScript",
+			
+		];
+		$( "#autocomplete" ).autocomplete({
+			source: availableTags
+		});
+		$( "#tabs" ).tabs();
+		//$(".selector" ).tabs({ active: 1 });
+	});
+	</script>
+	
+
+<style>
+	body{
+		font: 62.5% "Trebuchet MS", sans-serif;
+		margin: 50px;
+	}
+	</style>
+>>>>>>> 2fab922e5a5f26ebb1fb3052b9806b49379c2f21
 </head>
 <body>
 
 <!-- Tabs -->
+<<<<<<< HEAD
 <div class="container">
     <div class="row">
         <div class=<"col-md-12">
@@ -53,6 +90,24 @@
     </div>
 
         </div>
+=======
+<div id="tabs">
+	<ul id="nav">
+		<li><a href="#tabs-1">Validador</a></li>
+		<li><a href="#tabs-2">Cadena Original</a></li>
+		<li><a href="#tabs-3">Sello Digital</a></li>
+    <!--<li><a href="#tabs-4">Cadena y Sello </a></li>-->
+	</ul>
+	<div id="tabs-1">
+    
+  </div>
+	<div id="tabs-2">
+    
+  </div>
+	 
+  <div id="tabs-3">
+
+>>>>>>> 2fab922e5a5f26ebb1fb3052b9806b49379c2f21
 </div>
 
 
