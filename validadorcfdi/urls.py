@@ -1,3 +1,4 @@
+
 from django.conf.urls import patterns, include, url
 from django.conf import settings
 from cfdi import views
@@ -5,7 +6,10 @@ from django.contrib import admin
 from cfdi.views import validadorcfdi, cadena, sellodigital
 admin.autodiscover()
 
+
 urlpatterns = patterns('',
+
+
 url(r'^validadorcfdi/$', validadorcfdi.as_view()),
 
 url(r'^cadena/$', cadena.as_view()),
