@@ -1,62 +1,62 @@
 <!doctype html>
 <html lang="us">
+
+
 <head>
+        <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+       
+	<link  rel="stylesheet" href="{{ STATIC_ROOT }}css/bootstrap.css" >
+	<link  rel="stylesheet" href="{{ STATIC_ROOT }}css/main.css">
+	<script src="{{ STATIC_ROOT }}js/modernizr-2.6.2.min.js"></script>
+    <script src="{{ STATIC_ROOT }}js/bootstrap.js"></script>
+          <script src="{{ STATIC_ROOT }}js/plugins.js"></script>
+          <script src="{{ STATIC_ROOT }}js/main.js"></script>
+          <script src="{{ STATIC_ROOT }}js/jquery-1.10.1.min.js"></script>
 
-	<meta charset="utf-8">
-	<title></title>
-	<link href="{{ STATIC_ROOT }}css/validador.css" rel="stylesheet" type="text/css">
-	<script src="{{ STATIC_ROOT }}js/jquery-1.10.2.js"></script>
-	<script src="{{ STATIC_ROOT }}js/jquery-ui-1.10.4.custom.js"></script>
+  
 
-	<script>
-	$(function() {
-		
-		$( "#accordion" ).accordion();
-		var availableTags = [
-			"ActionScript",
-			"AppleScript",
-			"JavaScript",
-			
-		];
-		$( "#autocomplete" ).autocomplete({
-			source: availableTags
-		});
-		$( "#tabs" ).tabs();
-		//$(".selector" ).tabs({ active: 1 });
-	});
-	</script>
-	
-
-<style>
-	body{
-		font: 62.5% "Trebuchet MS", sans-serif;
-		margin: 50px;
-	}
-	</style>
 </head>
 <body>
 
 <!-- Tabs -->
-<div id="tabs">
-	<ul id="nav">
-		<li><a href="#tabs-1">Validador</a></li>
-		<li><a href="#tabs-2">Cadena Original</a></li>
-		<li><a href="#tabs-3">Sello Digital</a></li>
-    <!--<li><a href="#tabs-4">Cadena y Sello </a></li>-->
-	</ul>
-	<div id="tabs-1">
-    
-  </div>
-	<div id="tabs-2">
-    
-  </div>
-	
-  <div id="tabs-3">
+<div class="container">
+    <div class="row">
+        <div class=<"col-md-12">
+            <h2>VALIDADOR FINKOK</h2><hr>
+            
+            <ul class="nav nav-tabs">
+
+             <li class="active"><a href="#tab1" data-toggle="tab">validador</a></li>
+             <li><a href="#tab2" data-toggle="tab">Cadena</a></li>
+             <li><a href="#tab3" data-toggle="tab">Sello</a></li>
+
+             </ul>
+
+             <div class="tab-content">
+                <div class="tab-pane active color1" id="tab1">
+                   
+                </div>
+                <div class="tab-pane color1" id="tab2">
+                   
+                </div>
+                <div class="tab-pane " id="tab3">
+                  
+                </div>
+
+
+             </div>
+    </div>
+
+        </div>
 </div>
 
 
 <script>
-$( "#tabs-1" ).load( "/validadorcfdi/", function( response, status, xhr ) {
+$( "#tab1" ).load( "/validadorcfdi/", function( response, status, xhr ) {
   if ( status == "error" ) {
     var msg = "Sorry but there was an error: ";
     $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
@@ -65,7 +65,7 @@ $( "#tabs-1" ).load( "/validadorcfdi/", function( response, status, xhr ) {
 </script>
 
 <script>
-$( "#tabs-2" ).load( "/cadena/", function( response, status, xhr ) {
+$( "#tab2" ).load( "/cadena/", function( response, status, xhr ) {
   if ( status == "error" ) {
     var msg = "Sorry but there was an error: ";
     $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
@@ -74,33 +74,28 @@ $( "#tabs-2" ).load( "/cadena/", function( response, status, xhr ) {
 </script>
 
 <script>
-$( "#tabs-3" ).load( "/sellodigital/", function( response, status, xhr ) {
+
+$( "#tab3" ).load( "/sellodigital/", function( response, status, xhr ) {
   if ( status == "error" ) {
     var msg = "Sorry but there was an error: ";
     $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
   }
 });
 </script>
-<!--           
-<div id="tabs-4" >
- 
-   <table border=1  bordercolor=silver>
-                &nbsp;
-                &nbsp;
-              <td>
-                 <p>XML: <input type="file" name="XML2" />
-                  <p>CER: <input type="file" name="cer2" />
-                  <p>KEY: <input type="file" name="KEY2" />
-                    <p> PASS: <input type="text" name="PASS:"/>
 
-                  <p align="center"> <input type="button" value="Validar"/><p/>
-                    Sello:
-                  <p align="center"><input type="text" cols="40" rows="5" style="width:500px; height:100px;">
-                    <p> Cadena:</p>
-                    <p align="center"><input type="text" cols="40" rows="5" style="width:500px; height:100px;">
-              </td>
-              </table>
-             </div>-->
 
-</body>
+        <script>window.jQuery || document.write('<script src="{{ STATIC_ROOT }}js/jquery-1.10.1.min.js"><\/script>')</script>
+
+          <script src="{{ STATIC_ROOT }}js/bootstrap.js"></script>
+          <script src="{{ STATIC_ROOT }}js/plugins.js"></script>
+          <script src="{{ STATIC_ROOT }}js/main.js"></script>
+
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
 </html>
