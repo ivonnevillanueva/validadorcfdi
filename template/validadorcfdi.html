@@ -1,50 +1,175 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title></title>
 </head>
 <body >
   <br><br>
 
 <table width="auto" height="auto" border="0" table="table" rules="groups" align="center">
-        <tr>
-          <td width="200" height="69">&nbsp;</td>
-          <td width="575"><p align="center"><font color="#525252"><font size="-1">Valida tus XML, FINKOK le dira si su XML tiene errorres y le mostrara un reporte en la parte inferior,<br />
-            si esta todo correcto le aparecera un mensaje que su documento XML esta correcto. </font></p>
-            <hr>
-            <br>
-            
-              &nbsp;
-              &nbsp;
-              <p align="center"> Comprobante: <input type="file" name="KEY:" />
-           
-            <form>
-              <p align="center"> Certificado PAC:<input type="file" name="KEY:" />
-              </p>
-              <br>
-              <p align="center">
-               <input  type="button" value="Validar"  class="btn btn-success"/>
-              </p
-              <hr
-              >
-              <br>
-            </form></td>
-          <td width="173">&nbsp;</td>
-        </tr>
-        <tr >
-          <td>&nbsp;</td>
-          <td><font color="#119b0e">
-            <table width="auto" border="1" bordercolor="ececec" align="center" table="table" rules="all" bgcolor="dbdbdb">
-              <tr>
-                <td><div align="center" ></td>
-              </tr>
-              <tr>
-                <td height="48" colspan="2"><div align="center"><font size="+2">REPORTE DE VALIDACION</div></td>
-              </tr>
-              <tr>
-                <td width="140"> Versión:</td>
-                <td width="228">&nbsp;</td>
-              </tr>
+
+
+ <title></title>
+  
+ <script language="javascript"> 
+
+function seleccionar()
+{
+	//selecciono todos los 'inputs'
+	var allinputs = document.getElementsByTagName("input");
+	//creo un array para almacenar solo los inputs que voy a utilizar
+	var inputs = new Array(); var j = 0; //La variable 'j' la utilizo como apuntador en el array 'input'
+	//recorro todos los input s recogidos
+	for(i=0; i<allinputs.length; i++)
+	{
+		//extraigo los inputs con la clase especifica para subir archivos
+		if (allinputs[i].className == "up")
+		{
+			//aca realizo el paso de los inputs(si el input tiene una clase 'upfil' entonces los aparto en un array en limpio)
+			inputs[j] = allinputs[i];
+			j++; //incremento el apuntador para el proximo input a almacenar
+		}
+	
+}
+	comprobacion(inputs); //llamada a la funcion que comprueba los inputs en cuestion
+
+
+}	
+
+function seleccionardos()
+{
+	//selecciono todos los 'inputs'
+	var allinputs = document.getElementsByTagName("input");
+	//creo un array para almacenar solo los inputs que voy a utilizar
+	var inputs = new Array(); var j = 0; //La variable 'j' la utilizo como apuntador en el array 'input'
+	//recorro todos los inputs recogidos
+	for(i=0; i<allinputs.length; i++)
+	{
+		//extraigo los inputs con la clase especifica para subir archivos
+		if (allinputs[i].className == "upco")
+		{
+			//aca realizo el paso de los inputs(si el input tiene una clase 'upfil' entonces los aparto en un array en limpio)
+			inputs[j] = allinputs[i];
+			j++; //incremento el apuntador para el proximo input a almacenar
+		}
+	
+}
+	comprobacion(inputs); //llamada a la funcion que comprueba los inputs en cuestion
+
+}	
+
+function seleccionartres()
+{
+  //selecciono todos los 'inputs'
+  var allinputs = document.getElementsByTagName("input");
+  //creo un array para almacenar solo los inputs que voy a utilizar
+  var inputs = new Array(); var j = 0; //La variable 'j' la utilizo como apuntador en el array 'input'
+  //recorro todos los inputs recogidos
+  for(i=0; i<allinputs.length; i++)
+  {
+    //extraigo los inputs con la clase especifica para subir archivos
+    if (allinputs[i].className == "upfil")
+    {
+      //aca realizo el paso de los inputs(si el input tiene una clase 'upfil' entonces los aparto en un array en limpio)
+      inputs[j] = allinputs[i];
+      j++; //incremento el apuntador para el proximo input a almacenar
+    }
+  
+}
+  comprobacion(inputs); //llamada a la funcion que comprueba los inputs en cuestion
+
+} 
+
+function comprobacion(iarray,archivo,archivodos,archivotres)
+
+{	
+	for(m=0; m < iarray.length; m++) //recorro el array con los inputs
+	{
+		var ca1 = iarray[m].value; //tomo el valor del primer input
+		var s = ca1.lastIndexOf("."); //obtengo la posision del ultimo punto en la cadena(el que precede a la extencion) 
+		var miarr = new Array("xml"); //Declaro un array con las extensiones permitidas 
+		
+
+
+for	(i = 0; i < miarr.length; i++) //bucle en el que compruebo las extensiones permitidas
+		{
+			var charfind = ca1.substr(s+1,4); //extraigo las ultimas 4 letras despues del punto (posision 's+1')
+			charfind = charfind.toLowerCase(); //convierto la extraccion a minisculas para evitar comprobaciones erroneas
+			if(charfind == miarr[i]) //compruebo la extencion obtenida con las permitidas
+			{
+				//alert("Archivo "+(m+1)+" validado"); //si es correcta aviso que esta validado
+				iarray[m].style.border = 'inherit'; //limpio bordes por si es la segunda ejecucion
+				iarray[m].style.color = 'black'; //limpio el color de letra por si es la segunda ejecucion
+				break; //termino blucle
+			}
+	if(i == miarr.length - 1) //si se ha llegado a la ultima pasada en el bucle aviso que se ha introducido una extension erronea
+			{
+				iarray[m].style.border = '5px solid green'; //remarco el borde del elemento mal
+				iarray[m].style.color = 'red'; //remarco fuente del elemento malo
+				alert("Has introducido una extension erronea en el archivo marcado " ) //+ (m+1)); //envio alerta
+			}
+		
+
+        }
+	}
+}
+
+function comprobar(){
+		
+
+               if (document.formulario.archivo.value=="" && document.formulario.archivodos.value=="")
+                {
+                        alert("Usted no ha ingresado ningun archvo! ");
+                }
+else {
+          
+
+               if(document.formulario.archivo.value==""){
+			alert("Le falta ingresar su Comprobante!");
+		}
+
+                if(document.formulario.archivodos.value==""){
+			alert("Le falta ingresar su Certificado PAC!");
+		}
+
+}
+
+}
+
+</script> 
+<div>
+ <center>
+Valida tus XML, FINKOK le dira si su XML tiene errorres y le<br>mostrara un reporte en la parte inferior, si esta todo correcto<br> le aparecera un mensaje que su documento XML esta correcto. 
+</p>
+<body>
+
+
+ 
+<form name="formulario">
+<align="center"><align="center">&nbsp;&nbsp;Comprobante:&nbsp;&nbsp;<align="center"><input type="file" id="archivo" class="up" onChange="seleccionar()" ><br>
+<align="center"><align="center"><br/>Certificado PAC:&nbsp;&nbsp;<align="center"><input type="file" id="archivodos" onChange="seleccionardos()" class="upco" />
+<p align="center">
+    <input type="button" value="Validar" onClick="comprobar()" align="center" class="btn btn-success"> 
+</form>
+<br />
+</p>
+
+</center>
+</p>
+</div>
+</body>
+
+<div>
+  <table width="auto" border="1" bordercolor="ececec" align="center" table="table" class="table table-hover" rules="all" bgcolor="dbdbdb">
+    
+<tr>
+  <td height="48" colspan="2"><div align="center"><font size="+2">REPORTE DE VALIDACION</div></td>
+</tr>
+  <tr>
+    <td width="140"> Versión:</td>
+    <td width="228">&nbsp;</td>
+  </tr>
               <tr >
                 <td>Fecha:</td>
                 <td>&nbsp;</td>
@@ -109,6 +234,7 @@
             <p>&nbsp;</p></td>
           <td>&nbsp;</td>
         </tr>
-      </table>
-</body>
+      </table></div>
+</head>
+</table>
 </html>
